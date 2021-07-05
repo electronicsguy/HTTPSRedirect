@@ -1,5 +1,5 @@
 [![CI](https://github.com/electronicsguy/HTTPSRedirect/actions/workflows/build.yml/badge.svg)](https://github.com/electronicsguy/HTTPSRedirect/actions/workflows/build.yml)
-![GitHub](https://img.shields.io/github/license/electronicsguy/HTTPSRedirect?label=licence)
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 
 # HTTPS Redirect
 ## A library for seamless data logging, communication and control for Internet of Things (focus: ESP8266, ESP32)
