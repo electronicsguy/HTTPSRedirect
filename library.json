@@ -1,0 +1,19 @@
+{
+  "name": "HTTPSRedirect",
+  "description": "HTTPS on ESP8266 with follow redirects, chunked encoding support",
+  "keywords": "esp8266, http, redirects",
+  "authors":
+  {
+    "name": "Sujay Phadke"
+  },
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/electronicsguy/HTTPSRedirect.git"
+  },
+  "version": "2.1",
+  "frameworks": [
+        "arduino",
+   ],
+  "platforms": "*"
+}

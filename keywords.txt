@@ -1,0 +1,28 @@
+#######################################
+# Syntax Coloring Map For HTTPSRedirect
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+HTTPSRedirect			KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+GET					KEYWORD2
+POST					KEYWORD2
+getStatusCode			KEYWORD2
+getReasonPhrase			KEYWORD2
+getResponseBody			KEYWORD2	
+setPrintResponseBody		KEYWORD2
+setMaxRedirects			KEYWORD2
+setContentTypeHeader		KEYWORD2
+reConnectFinalEndpoint	KEYWORD2
+
+
+#######################################
+# Constants (LITERAL1)
+#######################################
