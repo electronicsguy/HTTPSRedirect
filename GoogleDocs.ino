@@ -12,13 +12,10 @@
 #include "HTTPSRedirect.h"
 #include "DebugMacros.h"
 
-// Fill ssid and password with your network credentials
-const char* ssid = "";
-const char* password = "";
-
-const char* host = "script.google.com";
-// Replace with your own script id to make server side changes
-const char *GScriptId = "AKfycbzYw5G-oxvnwHpAJfDsS0PWNrO0KTBMiCW78lHUcEO6ZnFHvSw";
+extern const char* ssid;
+extern const char* password;
+extern const char* host;
+extern const char *GScriptId;
 
 const int httpsPort = 443;
 
@@ -33,9 +30,10 @@ String url2 = String("/macros/s/") + GScriptId + "/exec?cal";
 // Read from Google Spreadsheet
 String url3 = String("/macros/s/") + GScriptId + "/exec?read";
 
-String payload_base =  "{\"command\": \"appendRow\", \
-                    \"sheet_name\": \"Sheet1\", \
-                    \"values\": ";
+String payload_prefix = "{\"command\": \"appendRow\", \
+                          \"sheet_name\": \"Sheet1\", \
+                          \"values\": \"";
+String payload_suffix = "\"}";
 String payload = "";
 
 HTTPSRedirect* client = nullptr;
@@ -109,9 +107,9 @@ void setup() {
 */ 
 
   // Send memory data to Google Sheets
-  payload = payload_base + "\"" + free_heap_before + "," + free_stack_before + "\"}";
+  payload = payload_prefix + free_heap_before + "," + free_stack_before + payload_suffix;
   client->POST(url2, host, payload, false);
-  payload = payload_base + "\"" + ESP.getFreeHeap() + "," + ESP.getFreeContStack() + "\"}";
+  payload = payload_prefix + ESP.getFreeHeap() + "," + ESP.getFreeContStack() + payload_suffix;
   client->POST(url2, host, payload, false);
   
   // Note: setup() must finish within approx. 1s, or the the watchdog timer
@@ -125,7 +123,7 @@ void setup() {
   client->GET(url, host);
 
   // Send memory data to Google Sheets
-  payload = payload_base + "\"" + ESP.getFreeHeap() + "," + ESP.getFreeContStack() + "\"}";
+  payload = payload_prefix + ESP.getFreeHeap() + "," + ESP.getFreeContStack() + payload_suffix;
   client->POST(url2, host, payload, false);
   
   Serial.println("\nGET: Fetch Google Calendar Data:");
@@ -135,7 +133,7 @@ void setup() {
   client->GET(url2, host);
 
   // Send memory data to Google Sheets
-  payload = payload_base + "\"" + ESP.getFreeHeap() + "," + ESP.getFreeContStack() + "\"}";
+  payload = payload_prefix + ESP.getFreeHeap() + "," + ESP.getFreeContStack() + payload_suffix;
   client->POST(url2, host, payload, false);
   
   Serial.println("\nSeries of GET and POST requests");
@@ -170,7 +168,7 @@ void loop() {
   if (client != nullptr){
     if (!client->connected()){
       client->connect(host, httpsPort);
-      payload = payload_base + "\"" + free_heap_before + "," + free_stack_before + "\"}";
+      payload = payload_prefix + free_heap_before + "," + free_stack_before + payload_suffix;
       client->POST(url2, host, payload, false);
     }
   }
@@ -198,7 +196,7 @@ void loop() {
   }
 
   Serial.println("POST append memory data to spreadsheet:");
-  payload = payload_base + "\"" + ESP.getFreeHeap() + "," + ESP.getFreeContStack() + "\"}";
+  payload = payload_prefix + ESP.getFreeHeap() + "," + ESP.getFreeContStack() + payload_suffix;
   if(client->POST(url2, host, payload)){
     ;
   }
