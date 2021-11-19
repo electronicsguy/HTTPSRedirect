@@ -168,13 +168,13 @@ The Arduino example does the following:
   4. Makes repeated POST requests and records the current value of the free heap and free stack sizes into the sheet. These are plotted in the chart. 
   
 Following is a representative image of the spreadsheet. (Yours may not look like this if the data has been cleared. To generate a chart similar to this, create your own spreadsheet as explained in the next section, and let the device record around 200 rows of data.)
-<p align="center"><img src="https://github.com/electronicsguy/ESP8266/blob/master/HTTPSRedirect/Extra/spreadsheet.jpg" width="600" height="300"></p>
+<p align="center"><img src="https://github.com/electronicsguy/HTTPSRedirect/blob/main/Extra/spreadsheet.jpg" width="600" height="300"></p>
 
 The test calendar that I have in my Google Calendar account looks like this:
-<p align="center"><img src="https://github.com/electronicsguy/ESP8266/blob/master/HTTPSRedirect/Extra/Test-REST-API-calendar.JPG" width="600" height="300"></p>
+<p align="center"><img src="https://github.com/electronicsguy/HTTPSRedirect/blob/main/Extra/Test-REST-API-calendar.jpg" width="600" height="300"></p>
 
 The data is fetched from my Spreadsheet and Google calendar. This is the Serial output:
-<p align="center"><img src="https://github.com/electronicsguy/ESP8266/blob/master/HTTPSRedirect/Extra/output.jpg" width="600" height="300"></p>
+<p align="center"><img src="https://github.com/electronicsguy/HTTPSRedirect/blob/main/Extra/output.jpg" width="600" height="300"></p>
 
 ---
 
