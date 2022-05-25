@@ -219,3 +219,4 @@ If you like my work and would like to buy me some :coffee: :beer:, you can send 
 <p align="center"><a href="https://paypal.me/electronicsguy" target="_blank"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" /></a></p>
 
 Users in India can donate using UPI to my wallet: electronicsguy@icici
+![UPI_QR_code](https://github.com/electronicsguy/HTTPSRedirect/blob/main/Extra/upi.jpg)
