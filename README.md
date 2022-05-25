@@ -218,4 +218,4 @@ I hope you enjoy using this library. Please try it out for yourself. Your commen
 If you like my work and would like to buy me some :coffee: :beer:, you can send your contributions here:
 <p align="center"><a href="https://paypal.me/electronicsguy" target="_blank"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" /></a></p>
 
-Users in India can also send using Paytm to my wallet: [paytm](http://bit.ly/2o1GDrC)
+Users in India can donate using UPI to my wallet: electronicsguy@icici
